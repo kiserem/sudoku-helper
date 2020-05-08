@@ -12,6 +12,7 @@ describe ('Basic Functionality', () => {
         const pencilBoard = shallow(<PencilBoard/>);
         expect(pencilBoard.state().value).toBe(null);
         expect(pencilBoard.find('.pencilCell')).toHaveLength(0);
+
         const clickHandler = pencilBoard.find(PencilCell).first().prop('handleClick');
         clickHandler();
         expect(pencilBoard.state().value).toBe(1);

@@ -1,10 +1,11 @@
 div.Board {
     border: 3px solid #FFFFFF;
+    float: left;
 }
 
 div.Board .row {
     background-color: #61dafb;
-    height: 21vh;
+    height: 9vh;
 }
 
 div.Board .row:first-child {

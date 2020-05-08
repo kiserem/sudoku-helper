@@ -1,16 +1,20 @@
 div.Cell {
-    min-width: 21vh;
-    min-height: 21vh;
+    min-width: 9vh;
+    min-height: 9vh;
     border-right: 1px solid #1C444F;
     float: left;
+    color: #000000;
 }
 
 div.Cell:last-child {
     border-right: none;
 }
 
-div.row:nth-child(2n) div.Cell:nth-child(2n+1),
-div.row:nth-child(2n+1) div.Cell:nth-child(2n){
+div.Board.odd div.row:nth-child(2n) div.Cell:nth-child(2n+1),
+div.Board.odd div.row:nth-child(2n+1) div.Cell:nth-child(2n),
+div.Board.even div.row:nth-child(2n) div.Cell:nth-child(2n),
+div.Board.even div.row:nth-child(2n+1) div.Cell:nth-child(2n+1){
     background-color: #282c34;
+    color: #FFFFFF;
 }
 

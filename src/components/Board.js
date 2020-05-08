@@ -5,7 +5,7 @@ import Cell from './Cell';
 class Board extends React.Component {
     render() {
         return (
-            <div className="Board">
+            <div className={this.props.class}>
                 <div className="row">
                     <Cell/>
                     <Cell/>

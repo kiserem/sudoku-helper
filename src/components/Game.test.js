@@ -10,7 +10,7 @@ describe ('Basic Functionality', () => {
 
     it('renders a board', () => {
         const game = shallow(<Game />);
-        expect(game.find(Board)).toHaveLength(1);
+        expect(game.find(Board)).toHaveLength(9);
     })
 
 });

@@ -1,18 +1,18 @@
 .pencilRow {
-    width: 21vh;
-    height: 7vh;
+    width: 9vh;
+    height: 3vh;
 }
 
 div.PencilBoard.unsolved div.pencilCell {
-    width: 7vh;
-    height: 7vh;
+    width: 3vh;
+    height: 3vh;
     float: left;
 }
 
 div.PencilBoard.solved div.pencilCell {
-    width: 21vh;
-    height: 21vh;
-    font-size: 15vh;
+    width: 9vh;
+    height: 9vh;
+    font-size: 7vh;
 }
 
 div.PencilBoard {
