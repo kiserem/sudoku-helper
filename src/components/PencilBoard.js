@@ -11,8 +11,6 @@ class PencilBoard extends React.Component {
     }
 
     handleClick(i) {
-        console.log("HELLO");
-        console.log(i);
         this.setState({
             value: i
         });
@@ -37,26 +35,14 @@ class PencilBoard extends React.Component {
                     <PencilCell displayValue={3} handleClick={() => this.handleClick(3)}/>
                 </div>
                 <div className="pencilRow">
-                    <div className="pencilCell" onClick={() => this.handleClick(4)}>
-                        4
-                    </div>
-                    <div className="pencilCell" onClick={() => this.handleClick(5)}>
-                        5
-                    </div>
-                    <div className="pencilCell" onClick={() => this.handleClick(6)}>
-                        6
-                    </div>
+                    <PencilCell displayValue={4} handleClick={() => this.handleClick(4)}/>
+                    <PencilCell displayValue={5} handleClick={() => this.handleClick(5)}/>
+                    <PencilCell displayValue={6} handleClick={() => this.handleClick(6)}/>
                 </div>
                 <div className="pencilRow">
-                    <div className="pencilCell" onClick={() => this.handleClick(7)}>
-                        7
-                    </div>
-                    <div className="pencilCell" onClick={() => this.handleClick(8)}>
-                        8
-                    </div>
-                    <div className="pencilCell" onClick={() => this.handleClick(9)}>
-                        9
-                    </div>
+                    <PencilCell displayValue={7} handleClick={() => this.handleClick(7)}/>
+                    <PencilCell displayValue={8} handleClick={() => this.handleClick(8)}/>
+                    <PencilCell displayValue={9} handleClick={() => this.handleClick(9)}/>
                 </div>
             </div>
         );
