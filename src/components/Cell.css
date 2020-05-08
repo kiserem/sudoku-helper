@@ -1,0 +1,16 @@
+div.Cell {
+    min-width: 21vh;
+    min-height: 21vh;
+    border-right: 1px solid #1C444F;
+    float: left;
+}
+
+div.Cell:last-child {
+    border-right: none;
+}
+
+div.row:nth-child(2n) div.Cell:nth-child(2n+1),
+div.row:nth-child(2n+1) div.Cell:nth-child(2n){
+    background-color: #282c34;
+}
+

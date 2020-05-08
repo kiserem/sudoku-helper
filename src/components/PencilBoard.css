@@ -1,0 +1,25 @@
+.pencilRow {
+    width: 21vh;
+    height: 7vh;
+}
+
+div.PencilBoard.unsolved div.pencilCell {
+    width: 7vh;
+    height: 7vh;
+    float: left;
+}
+
+div.PencilBoard.solved div.pencilCell {
+    width: 21vh;
+    height: 21vh;
+    font-size: 15vh;
+}
+
+div.PencilBoard {
+    cursor: default;
+}
+
+div.pencilCell:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
