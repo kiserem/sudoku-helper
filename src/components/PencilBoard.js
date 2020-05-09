@@ -7,6 +7,18 @@ class PencilBoard extends React.Component {
         super(props);
         this.state = {
             value: null,
+            pencil_1: 1,
+            pencil_2: 2,
+            pencil_3: 3,
+            pencil_4: 4,
+            pencil_5: 5,
+            pencil_6: 6,
+            pencil_7: 7,
+            pencil_8: 8,
+            pencil_9: 9,
+            sudoku_block: this.props.sudoku_block,
+            sudoku_row: this.props.sudoku_row,
+            sudoku_column: this.props.sudoku_column,
         };
     }
 
@@ -30,19 +42,19 @@ class PencilBoard extends React.Component {
         return (
             <div className="PencilBoard unsolved">
                 <div className="pencilRow">
-                    <PencilCell displayValue={1} handleClick={() => this.handleClick(1)}/>
-                    <PencilCell displayValue={2} handleClick={() => this.handleClick(2)}/>
-                    <PencilCell displayValue={3} handleClick={() => this.handleClick(3)}/>
+                    <PencilCell value={this.state.pencil_1} handleClick={() => this.handleClick(this.state.pencil_1)}/>
+                    <PencilCell value={this.state.pencil_2} handleClick={() => this.handleClick(this.state.pencil_2)}/>
+                    <PencilCell value={this.state.pencil_3} handleClick={() => this.handleClick(this.state.pencil_3)}/>
                 </div>
                 <div className="pencilRow">
-                    <PencilCell displayValue={4} handleClick={() => this.handleClick(4)}/>
-                    <PencilCell displayValue={5} handleClick={() => this.handleClick(5)}/>
-                    <PencilCell displayValue={6} handleClick={() => this.handleClick(6)}/>
+                    <PencilCell value={this.state.pencil_4} handleClick={() => this.handleClick(this.state.pencil_4)}/>
+                    <PencilCell value={this.state.pencil_5} handleClick={() => this.handleClick(this.state.pencil_5)}/>
+                    <PencilCell value={this.state.pencil_6} handleClick={() => this.handleClick(this.state.pencil_6)}/>
                 </div>
                 <div className="pencilRow">
-                    <PencilCell displayValue={7} handleClick={() => this.handleClick(7)}/>
-                    <PencilCell displayValue={8} handleClick={() => this.handleClick(8)}/>
-                    <PencilCell displayValue={9} handleClick={() => this.handleClick(9)}/>
+                    <PencilCell value={this.state.pencil_7} handleClick={() => this.handleClick(this.state.pencil_7)}/>
+                    <PencilCell value={this.state.pencil_8} handleClick={() => this.handleClick(this.state.pencil_8)}/>
+                    <PencilCell value={this.state.pencil_9} handleClick={() => this.handleClick(this.state.pencil_9)}/>
                 </div>
             </div>
         );

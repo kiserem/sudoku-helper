@@ -3,23 +3,35 @@ import './Board.css';
 import Cell from './Cell';
 
 class Board extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sudoku_block: this.props.sudoku_block,
+            sudoku_block_row: this.props.sudoku_block_row,
+            sudoku_block_column: this.props.sudoku_block_column,
+        };
+    }
+
     render() {
         return (
             <div className={this.props.class}>
                 <div className="row">
-                    <Cell/>
-                    <Cell/>
-                    <Cell/>
+                    {/*1,4,7*/}
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={1 + this.state.sudoku_block_row} sudoku_column={1 + this.state.sudoku_block_column}/>
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={1 + this.state.sudoku_block_row} sudoku_column={2 + this.state.sudoku_block_column}/>
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={1 + this.state.sudoku_block_row} sudoku_column={3 + this.state.sudoku_block_column}/>
                 </div>
                 <div className="row">
-                    <Cell/>
-                    <Cell/>
-                    <Cell/>
+                    {/*2,5,8*/}
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={2 + this.state.sudoku_block_row} sudoku_column={1 + this.state.sudoku_block_column}/>
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={2 + this.state.sudoku_block_row} sudoku_column={2 + this.state.sudoku_block_column}/>
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={2 + this.state.sudoku_block_row} sudoku_column={3 + this.state.sudoku_block_column}/>
                 </div>
                 <div className="row">
-                    <Cell/>
-                    <Cell/>
-                    <Cell/>
+                    {/*3,6,9*/}
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={3 + this.state.sudoku_block_row} sudoku_column={1 + this.state.sudoku_block_column}/>
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={3 + this.state.sudoku_block_row} sudoku_column={2 + this.state.sudoku_block_column}/>
+                    <Cell sudoku_block={this.state.sudoku_block} sudoku_row={3 + this.state.sudoku_block_row} sudoku_column={3 + this.state.sudoku_block_column}/>
                 </div>
             </div>
         );
