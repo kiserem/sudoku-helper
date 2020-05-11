@@ -10,12 +10,14 @@ describe ('Basic Functionality', () => {
 
     it('binds a state changing function to the PencilCell', () => {
         const pencilBoard = shallow(<PencilBoard/>);
-        expect(pencilBoard.state().value).toBe(null);
+
+        expect(pencilBoard.state().cell_value).toBe(null);
         expect(pencilBoard.find('.pencilCell')).toHaveLength(0);
 
         const clickHandler = pencilBoard.find(PencilCell).first().prop('handleClick');
         clickHandler();
-        expect(pencilBoard.state().value).toBe(1);
+
+        expect(pencilBoard.state().cell_value).toBe(1);
         expect(pencilBoard.find('.pencilCell')).toHaveLength(1);
     })
 });

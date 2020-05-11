@@ -6,7 +6,7 @@ class PencilBoard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: null,
+            cell_value: null,
             pencil_1: 1,
             pencil_2: 2,
             pencil_3: 3,
@@ -24,7 +24,7 @@ class PencilBoard extends React.Component {
 
     handleClick(i) {
         this.setState({
-            value: i
+            cell_value: i
         });
     }
 
@@ -32,7 +32,7 @@ class PencilBoard extends React.Component {
         return (
             <div className="PencilBoard solved">
                 <div className="pencilCell">
-                    {this.state.value}
+                    {this.state.cell_value}
                 </div>
             </div>
         );
@@ -60,7 +60,7 @@ class PencilBoard extends React.Component {
         );
     }
     render() {
-        if (this.state.value === null) {
+        if (this.state.cell_value === null) {
             return this.renderUnsolved();
         } else {
             return this.renderSolved();
