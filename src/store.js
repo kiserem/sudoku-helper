@@ -3,6 +3,7 @@ import selectValueReducer from "./reducers";
 
 function build_pencil_board(block, row, column) {
     return {
+        id: "pencil_board_" + block + "_" + row + "_" + column,
         sudoku_block: block,
         sudoku_row: row,
         sudoku_column: column,
@@ -21,6 +22,7 @@ function build_pencil_board(block, row, column) {
 
 function build_cell(block, row, column) {
     return {
+        id: "cell_" + block + "_" + row + "_" + column,
         sudoku_block: block,
         sudoku_row: row,
         sudoku_column: column,
@@ -30,6 +32,7 @@ function build_cell(block, row, column) {
 
 function build_board(block, block_row, block_column) {
     return {
+        id: block,
         sudoku_block: block,
         sudoku_block_row: block_row,
         sudoku_block_column: block_column,

@@ -1,29 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import selectValue from '../actions';
 import PencilCell from './PencilCell';
 import './PencilBoard.css';
 
 class PencilBoard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            cell_value: null,
-            pencil_1: 1,
-            pencil_2: 2,
-            pencil_3: 3,
-            pencil_4: 4,
-            pencil_5: 5,
-            pencil_6: 6,
-            pencil_7: 7,
-            pencil_8: 8,
-            pencil_9: 9,
+    handleClick(i) {
+        this.props.selectValue({
             sudoku_block: this.props.sudoku_block,
             sudoku_row: this.props.sudoku_row,
             sudoku_column: this.props.sudoku_column,
-        };
-    }
-
-    handleClick(i) {
-        this.setState({
+            cell: this.props.cell,
             cell_value: i
         });
     }
@@ -32,7 +19,7 @@ class PencilBoard extends React.Component {
         return (
             <div className="PencilBoard solved">
                 <div className="pencilCell">
-                    {this.state.cell_value}
+                    {this.props.cell_value}
                 </div>
             </div>
         );
@@ -42,25 +29,25 @@ class PencilBoard extends React.Component {
         return (
             <div className="PencilBoard unsolved">
                 <div className="pencilRow">
-                    <PencilCell value={this.state.pencil_1} handleClick={() => this.handleClick(this.state.pencil_1)}/>
-                    <PencilCell value={this.state.pencil_2} handleClick={() => this.handleClick(this.state.pencil_2)}/>
-                    <PencilCell value={this.state.pencil_3} handleClick={() => this.handleClick(this.state.pencil_3)}/>
+                    <PencilCell value={this.props.pencil_1} handleClick={() => this.handleClick(this.props.pencil_1)}/>
+                    <PencilCell value={this.props.pencil_2} handleClick={() => this.handleClick(this.props.pencil_2)}/>
+                    <PencilCell value={this.props.pencil_3} handleClick={() => this.handleClick(this.props.pencil_3)}/>
                 </div>
                 <div className="pencilRow">
-                    <PencilCell value={this.state.pencil_4} handleClick={() => this.handleClick(this.state.pencil_4)}/>
-                    <PencilCell value={this.state.pencil_5} handleClick={() => this.handleClick(this.state.pencil_5)}/>
-                    <PencilCell value={this.state.pencil_6} handleClick={() => this.handleClick(this.state.pencil_6)}/>
+                    <PencilCell value={this.props.pencil_4} handleClick={() => this.handleClick(this.props.pencil_4)}/>
+                    <PencilCell value={this.props.pencil_5} handleClick={() => this.handleClick(this.props.pencil_5)}/>
+                    <PencilCell value={this.props.pencil_6} handleClick={() => this.handleClick(this.props.pencil_6)}/>
                 </div>
                 <div className="pencilRow">
-                    <PencilCell value={this.state.pencil_7} handleClick={() => this.handleClick(this.state.pencil_7)}/>
-                    <PencilCell value={this.state.pencil_8} handleClick={() => this.handleClick(this.state.pencil_8)}/>
-                    <PencilCell value={this.state.pencil_9} handleClick={() => this.handleClick(this.state.pencil_9)}/>
+                    <PencilCell value={this.props.pencil_7} handleClick={() => this.handleClick(this.props.pencil_7)}/>
+                    <PencilCell value={this.props.pencil_8} handleClick={() => this.handleClick(this.props.pencil_8)}/>
+                    <PencilCell value={this.props.pencil_9} handleClick={() => this.handleClick(this.props.pencil_9)}/>
                 </div>
             </div>
         );
     }
     render() {
-        if (this.state.cell_value === null) {
+        if (this.props.cell_value === null) {
             return this.renderUnsolved();
         } else {
             return this.renderSolved();
@@ -68,4 +55,25 @@ class PencilBoard extends React.Component {
     }
 }
 
-export default PencilBoard;
+const mapStateToProps = (state, passed_props) => {
+    return {
+        cell_value: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.cell_value,
+        pencil_1: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_1,
+        pencil_2: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_2,
+        pencil_3: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_3,
+        pencil_4: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_4,
+        pencil_5: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_5,
+        pencil_6: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_6,
+        pencil_7: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_7,
+        pencil_8: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_8,
+        pencil_9: state.sudoku_board.game.boards[passed_props.sudoku_block - 1].cells[passed_props.cell - 1].pencil_board.pencil_9,
+        sudoku_block: passed_props.sudoku_block,
+        sudoku_row: passed_props.sudoku_row,
+        sudoku_column: passed_props.sudoku_column,
+        cell: passed_props.cell,
+    };
+};
+
+
+
+export default connect(mapStateToProps, {selectValue})(PencilBoard);

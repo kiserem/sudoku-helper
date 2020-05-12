@@ -17,7 +17,7 @@ class Game extends React.Component {
 
         for(let [index, val] of this.props.sudoku_board.game.boards.slice(3,6).entries()) {
             row_2.push(
-                <Board key={val.sudoku_block} class={'Board ' + (index % 2 ? 'even' : 'odd')} sudoku_block={val.sudoku_block} sudoku_block_row={val.sudoku_block_row} sudoku_block_column={val.sudoku_block_column}></Board>
+                <Board key={val.sudoku_block} class={'Board ' + (index % 2 ? 'odd' : 'even')} sudoku_block={val.sudoku_block} sudoku_block_row={val.sudoku_block_row} sudoku_block_column={val.sudoku_block_column}></Board>
             );
         }
 

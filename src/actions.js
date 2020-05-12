@@ -1,9 +1,9 @@
 export const SELECT_VALUE = 'SELECT_VALUE';
 
-function selectValue(value_selected) {
+function selectValue(cell_selected) {
     return {
         type: SELECT_VALUE,
-        value_selected
+        cell_selected: cell_selected
     }
 }
 
