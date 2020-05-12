@@ -1,23 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
+import { mount } from 'enzyme';
 import PencilBoard from './PencilBoard';
 import PencilCell from './PencilCell';
+import store from '../store';
 
 describe ('Basic Functionality', () => {
-    it('renders without crashing', () => {
-        shallow(<PencilBoard/>);
-    });
+    let wrapper;
 
-    it('binds a state changing function to the PencilCell', () => {
-        const pencilBoard = shallow(<PencilBoard/>);
+    beforeEach(() => {
+        wrapper = mount(<Provider store={store}>
+            <PencilBoard cell={1} sudoku_block={1} sudoku_row={1} sudoku_column={1}/>
+        </Provider>);
+    })
 
-        expect(pencilBoard.state().cell_value).toBe(null);
-        expect(pencilBoard.find('.pencilCell')).toHaveLength(0);
-
-        const clickHandler = pencilBoard.find(PencilCell).first().prop('handleClick');
-        clickHandler();
-
-        expect(pencilBoard.state().cell_value).toBe(1);
-        expect(pencilBoard.find('.pencilCell')).toHaveLength(1);
+    it('renders a set of pencil cells', () => {
+        expect(wrapper.find(PencilCell)).toHaveLength(9);
     })
 });

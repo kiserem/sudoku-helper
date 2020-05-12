@@ -1,16 +1,19 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Game from './Game.js'
-import Board from './Board.js';
+import { Provider } from 'react-redux';
+import { mount } from 'enzyme';
+import Game from './Game';
+import store from '../store';
+import Board from './Board';
 
 describe ('Basic Functionality', () => {
-    it('renders without crashing', () => {
-        shallow(<Game />);
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = mount(<Provider store={store}><Game/></Provider>);
     });
 
     it('renders a board', () => {
-        const game = shallow(<Game />);
-        expect(game.find(Board)).toHaveLength(9);
+        expect(wrapper.find(Board)).toHaveLength(9);
     })
 
 });
