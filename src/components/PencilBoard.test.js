@@ -12,9 +12,9 @@ describe ('Basic Functionality', () => {
         wrapper = mount(<Provider store={store}>
             <PencilBoard cell={1} sudoku_block={1} sudoku_row={1} sudoku_column={1}/>
         </Provider>);
-    })
+    });
 
     it('renders a set of pencil cells', () => {
         expect(wrapper.find(PencilCell)).toHaveLength(9);
-    })
+    });
 });
