@@ -51,21 +51,24 @@ function build_board(block, block_row, block_column) {
 }
 
 const initial_state = {
-    sudoku_board: {
-        game: {
-            boards: [
-                build_board(1,0,0),
-                build_board(2,0,3),
-                build_board(3,0,6),
-                build_board(4,3,0),
-                build_board(5,3,3),
-                build_board(6,3,6),
-                build_board(7,6,0),
-                build_board(8,6,3),
-                build_board(9,6,6),
-            ]
+    current: 0,
+    history: [{
+        sudoku_board: {
+            game: {
+                boards: [
+                    build_board(1, 0, 0),
+                    build_board(2, 0, 3),
+                    build_board(3, 0, 6),
+                    build_board(4, 3, 0),
+                    build_board(5, 3, 3),
+                    build_board(6, 3, 6),
+                    build_board(7, 6, 0),
+                    build_board(8, 6, 3),
+                    build_board(9, 6, 6),
+                ]
+            }
         }
-    }
+    }]
 };
 
 

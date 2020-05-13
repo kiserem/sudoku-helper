@@ -7,4 +7,4 @@ function selectValue(cell_selected) {
     }
 }
 
-export default selectValue;
+export default (selectValue);
