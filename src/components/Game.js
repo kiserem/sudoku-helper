@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import goBack from '../goBackAction';
-import goForward from '../goForwardAction';
 import Board from "./Board";
 
 class Game extends React.Component {
@@ -9,9 +8,6 @@ class Game extends React.Component {
         switch(direction) {
             case 'back':
                 this.props.goBack();
-                break;
-            case 'forward':
-                this.props.goForward();
                 break;
         }
     }
@@ -44,9 +40,6 @@ class Game extends React.Component {
                 <div className="previous" onClick={() => this.handleClick('back')}>
                     PREV
                 </div>
-                <div className="previous" onClick={() => this.handleClick('forward')}>
-                    FORWARD
-                </div>
                 <div className="game-board row">
                     {row_1}
                 </div>
@@ -68,4 +61,4 @@ const mapStateToProps = state => {
     return board_state.history[current];
 }
 
-export default connect(mapStateToProps, {goBack, goForward})(Game);
+export default connect(mapStateToProps, {goBack})(Game);

@@ -1,6 +1,5 @@
 import { SELECT_VALUE } from "./selectValueAction";
 import { GO_BACK } from "./goBackAction";
-import { GO_FORWARD } from "./goForwardAction";
 
 function selectValueReducer(state={}, action){
     switch(action.type) {
@@ -58,17 +57,21 @@ function selectValueReducer(state={}, action){
 
             oldState.current = current + 1;
             oldState.history.push(newState);
+            console.log("HOW MANY: " + oldState.history.length);
+
+            var testOldCell = oldState.history[0].sudoku_board.game.boards[action.cell_selected.sudoku_block - 1].cells[selected_cell].pencil_board.cell_value;
+            var testNewCell = oldState.history[1].sudoku_board.game.boards[action.cell_selected.sudoku_block - 1].cells[selected_cell].pencil_board.cell_value;
+            console.log("OLD CELL VAL: " + testOldCell);
+            console.log("NEW CELL VAL: " + testNewCell);
             return oldState;
             break;
         case GO_BACK:
             let priorState = Object.assign({}, state);
-            console.log("HELLO WORLD WE WENT BACK");
+            if (state.current > 0) {
+                priorState.current = state.current - 1;
+                priorState.history = priorState.history.slice(0,state.current);
+            }
             return priorState;
-            break;
-        case GO_FORWARD:
-            let nextState = Object.assign({}, state);
-            console.log("HELLO WORLD WE WENT FORWARD");
-            return nextState;
             break;
         default:
             return state;
