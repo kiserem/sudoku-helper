@@ -4,9 +4,10 @@ import { GO_BACK } from "./goBackAction";
 function selectValueReducer(state={}, action){
     switch(action.type) {
         case SELECT_VALUE:
+            // let blah = JSON.parse(JSON.stringify(state));
             let current = state.current;
-            let oldState = Object.assign({}, state);
-            let newState = Object.assign({}, state.history[current]);
+            let oldState = JSON.parse(JSON.stringify(state));
+            let newState = JSON.parse(JSON.stringify(state.history[current]));
             let cell_value = action.cell_selected.cell_value;
             let selected_cell = action.cell_selected.cell - 1;
             let selected_block = action.cell_selected.sudoku_block - 1;
