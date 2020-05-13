@@ -20,7 +20,7 @@ describe ('Basic Functionality', () => {
         expect(wrapper.find(PencilCell)).toHaveLength(9);
     });
 
-    it('handles a click event properly', () => {
+    it('handles a select_value click event properly', () => {
         const clickHandler = wrapper.find(PencilCell).first().prop('handleClick');
         clickHandler();
         const expectedAction = {
@@ -35,4 +35,6 @@ describe ('Basic Functionality', () => {
         };
         expect(fakeStore.getActions()).toContainEqual(expectedAction)
     });
+
+
 });
