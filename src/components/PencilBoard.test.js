@@ -34,6 +34,7 @@ describe ('Basic Functionality', () => {
             },
         };
         expect(fakeStore.getActions()).toContainEqual(expectedAction)
+
     });
 
 
