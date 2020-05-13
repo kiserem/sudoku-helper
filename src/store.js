@@ -50,7 +50,7 @@ function build_board(block, block_row, block_column) {
     }
 }
 
-const initial_state = {
+export const initial_state = {
     current: 0,
     history: [{
         sudoku_board: {
