@@ -1,17 +1,9 @@
 div.Board {
-    border: 3px solid #FFFFFF;
+    border: 3px solid #00AADD;
     float: left;
 }
 
 div.Board .row {
     background-color: #61dafb;
     height: 9vh;
-}
-
-div.Board .row:first-child {
-    border-bottom: 1px solid #1C444F;
-}
-
-div.Board .row:last-child {
-    border-top: 1px solid #1C444F;
 }

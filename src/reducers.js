@@ -60,7 +60,6 @@ function selectValueReducer(state={}, action){
             oldState.history.push(newState);
 
             return oldState;
-            break;
         case GO_BACK:
             let priorState = Object.assign({}, state);
             if (state.current > 0) {
@@ -68,7 +67,6 @@ function selectValueReducer(state={}, action){
                 priorState.history = priorState.history.slice(0,state.current);
             }
             return priorState;
-            break;
         default:
             return state;
     }

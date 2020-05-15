@@ -12,14 +12,16 @@ div.PencilBoard.unsolved div.pencilCell {
 div.PencilBoard.solved div.pencilCell {
     width: 9vh;
     height: 9vh;
-    font-size: 7vh;
+    font-size: 8vh;
+    text-align: center;
+    line-height: 9vh;
 }
 
 div.PencilBoard {
-    cursor: default;
+    cursor: pointer;
 }
 
 div.pencilCell:hover {
-    background-color: #FFFFFF;
+    background-color: #00CCFF;
     color: #000000;
 }

@@ -1,20 +1,16 @@
 div.Cell {
     min-width: 9vh;
     min-height: 9vh;
-    border-right: 1px solid #1C444F;
     float: left;
+    background-color: #D3D3D3;
     color: #000000;
-}
-
-div.Cell:last-child {
-    border-right: none;
 }
 
 div.Board.odd div.row:nth-child(2n) div.Cell:nth-child(2n+1),
 div.Board.odd div.row:nth-child(2n+1) div.Cell:nth-child(2n),
 div.Board.even div.row:nth-child(2n) div.Cell:nth-child(2n),
 div.Board.even div.row:nth-child(2n+1) div.Cell:nth-child(2n+1){
-    background-color: #282c34;
-    color: #FFFFFF;
+    background-color: #F5F5F5;
+    color: #000000;
 }
 

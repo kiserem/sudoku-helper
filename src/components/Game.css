@@ -1,0 +1,19 @@
+div.previous {
+    color: white;
+    height: 7vh;
+    width: 34vh;
+    background: #00CCFF;
+    padding: 2vh;
+    margin: 2vh;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    line-height: 7vh;
+    border-radius: 6vh;
+}
+
+div.previous:hover {
+    color: #000000;
+    background: #FFFFFF;
+    borer: 1px solid #00AADD;
+    cursor: pointer;
+}

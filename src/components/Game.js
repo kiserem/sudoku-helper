@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import goBack from '../goBackAction';
 import Board from "./Board";
+import './Game.css';
 
 class Game extends React.Component {
     handleClick(direction) {
@@ -38,7 +39,7 @@ class Game extends React.Component {
         return (
             <div className="game">
                 <div className="previous" onClick={() => this.handleClick('back')}>
-                    PREV
+                    UNDO LAST MOVE
                 </div>
                 <div className="game-board row">
                     {row_1}
